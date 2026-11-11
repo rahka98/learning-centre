@@ -22,7 +22,7 @@ export function CtaBand({ title = "Your degree can start with one conversation."
                 <Phone /> {business.phone.display}
               </a>
             </Button>
-            <Button asChild variant="glass" size="xl" className="text-on-band">
+            <Button asChild variant="onBand" size="xl">
               <Link to="/admissions">
                 Enquiry form <ArrowRight />
               </Link>

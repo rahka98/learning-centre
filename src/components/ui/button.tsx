@@ -21,6 +21,7 @@ const buttonVariants = cva(
         whatsapp: "rounded-full bg-whatsapp text-whatsapp-foreground font-semibold shadow-soft hover:-translate-y-0.5 hover:brightness-105 transition-all duration-300",
         glass: "rounded-full glass text-foreground font-semibold hover:border-gold/50 hover:-translate-y-0.5 transition-all duration-300",
         line: "rounded-full border border-foreground/15 bg-transparent text-foreground font-semibold hover:border-maroon hover:text-maroon transition-colors",
+        onBand: "rounded-full border border-on-band/30 bg-on-band/10 text-on-band font-semibold backdrop-blur hover:bg-on-band/20 hover:-translate-y-0.5 transition-all duration-300",
         inverse: "rounded-full bg-inverse-foreground text-inverse font-semibold hover:-translate-y-0.5 transition-all duration-300",
       },
       size: {
