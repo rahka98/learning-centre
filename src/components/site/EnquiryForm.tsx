@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
-import { CheckCircle2, Loader2, Phone, Send } from "lucide-react";
+import { CheckCircle2, ChevronDown, Loader2, Phone, Send } from "lucide-react";
 import { business } from "@/config/business";
 import { programs } from "@/data/programs";
 import { buildEnquiryMessage, cooldownRemaining, enquirySchema, whatsappUrl, type EnquiryInput } from "@/lib/enquiry";
@@ -140,7 +140,8 @@ export function EnquiryForm({ defaultProgram = "", className }: { defaultProgram
         </div>
         <div className="sm:col-span-2">
           <label htmlFor={`${uid}-program`} className={label}>Programme of interest <span className="text-maroon">*</span></label>
-          <select {...aria("program")} className={cn(field, "appearance-none bg-[length:1rem] bg-[right_1rem_center] bg-no-repeat pr-10")} value={values.program} onChange={set("program")}>
+          <div className="relative">
+          <select {...aria("program")} className={cn(field, "appearance-none pr-11")} value={values.program} onChange={set("program")}>
             <option value="">Select a programme</option>
             {programs.map((p) => (
               <option key={p.slug} value={p.slug}>
@@ -149,6 +150,8 @@ export function EnquiryForm({ defaultProgram = "", className }: { defaultProgram
             ))}
             <option value="not-sure">Not sure yet — I need guidance</option>
           </select>
+          <ChevronDown className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-[calc(50%-4px)] text-muted-foreground" aria-hidden />
+          </div>
           {err("program")}
         </div>
         <div className="sm:col-span-2">
