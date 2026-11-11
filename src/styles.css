@@ -59,6 +59,7 @@
   --color-whatsapp-foreground: var(--whatsapp-foreground);
   --color-inverse: var(--inverse);
   --color-inverse-foreground: var(--inverse-foreground);
+  --color-on-band: var(--on-band);
 
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -115,6 +116,7 @@
   --whatsapp-foreground: oklch(0.99 0 0);
   --inverse: oklch(0.2 0.03 262);
   --inverse-foreground: oklch(0.97 0.012 84);
+  --on-band: oklch(0.97 0.012 84);
 
   --gradient-hero: radial-gradient(1200px 600px at 85% -10%, oklch(0.9 0.08 85 / 0.7), transparent 60%),
     radial-gradient(900px 500px at -10% 20%, oklch(0.42 0.135 20 / 0.08), transparent 60%);
@@ -177,6 +179,7 @@
   --whatsapp-foreground: oklch(0.15 0.02 160);
   --inverse: oklch(0.955 0.012 84);
   --inverse-foreground: oklch(0.2 0.03 262);
+  --on-band: oklch(0.96 0.012 84);
 
   --gradient-hero: radial-gradient(1100px 600px at 85% -10%, oklch(0.82 0.125 80 / 0.13), transparent 60%),
     radial-gradient(900px 600px at -10% 30%, oklch(0.5 0.15 20 / 0.22), transparent 60%);
@@ -290,7 +293,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-maroon);
+  color: var(--eyebrow-color, var(--color-maroon));
   &::before {
     content: "";
     width: 1.75rem;
