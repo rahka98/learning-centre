@@ -22,10 +22,10 @@ export function InstagramIcon(props: SVGProps<SVGSVGElement>) {
 export function SealMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 48 48" className={className} aria-hidden>
-      <circle cx="24" cy="24" r="22.5" fill="var(--color-primary)" />
+      <circle cx="24" cy="24" r="22.5" fill="var(--color-maroon)" />
       <circle cx="24" cy="24" r="19" fill="none" stroke="var(--color-gold)" strokeWidth="1" strokeDasharray="1.5 2.2" />
       <path d="M12 21.5 24 15l12 6.5-12 6.5-12-6.5Z" fill="var(--color-gold)" />
-      <path d="M16.5 24.3v5.2c0 1.8 3.4 3.5 7.5 3.5s7.5-1.7 7.5-3.5v-5.2L24 28.3l-7.5-4Z" fill="var(--color-primary-foreground)" opacity=".92" />
+      <path d="M16.5 24.3v5.2c0 1.8 3.4 3.5 7.5 3.5s7.5-1.7 7.5-3.5v-5.2L24 28.3l-7.5-4Z" fill="var(--color-on-band)" opacity=".95" />
       <path d="M34.5 22.3v7" stroke="var(--color-gold)" strokeWidth="1.3" strokeLinecap="round" />
       <circle cx="34.5" cy="30.2" r="1.3" fill="var(--color-gold)" />
     </svg>

@@ -94,7 +94,7 @@ export function Hero3D() {
 
         {/* Programmes card */}
         <div
-          className="glass animate-float-slow absolute -right-2 bottom-[16%] w-[13.5rem] rounded-2xl p-4 shadow-elegant sm:-right-10 sm:w-[15rem]"
+          className="glass animate-float-slow absolute -right-2 bottom-[16%] w-[13.5rem] rounded-2xl p-4 shadow-elegant sm:-right-6 sm:w-[15rem] xl:-right-10"
           style={{ "--z": "120px", "--r": "2deg", transform: "translateZ(120px) rotate(2deg)", animationDelay: "-3s" } as React.CSSProperties}
         >
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-maroon">
