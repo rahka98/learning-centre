@@ -145,7 +145,7 @@ function Index() {
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {programs.map((p, i) => (
-              <Reveal key={p.slug} delay={(i % 4) * 80} className={i === 0 ? "sm:col-span-2 lg:row-span-1" : ""}>
+              <Reveal key={p.slug} delay={(i % 4) * 80} className={i === 0 ? "h-full sm:col-span-2" : "h-full"}>
                 <ProgramCard program={p} featured={i === 0} />
               </Reveal>
             ))}
