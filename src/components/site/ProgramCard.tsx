@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Clock } from "lucide-react";
 import type { Program } from "@/data/programs";
 import { cn } from "@/lib/utils";
 
@@ -21,11 +21,21 @@ export function ProgramCard({ program, featured = false, className }: { program:
         </span>
       </div>
       <h3 className={cn("text-h3 mt-8", featured && "[color:var(--color-on-band)]")}>{program.title}</h3>
-      <p className={cn("mt-3 flex-1 text-[0.95rem] leading-relaxed", featured ? "text-on-band/80" : "text-muted-foreground")}>{program.summary}</p>
-      <div className={cn("mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em]", featured ? "text-on-band/75" : "text-muted-foreground")}>
-        <span>{program.level}</span>
-        <span aria-hidden>·</span>
-        <span>{program.duration}</span>
+      <p className={cn("mt-3 text-[0.95rem] leading-relaxed", featured ? "text-on-band/80" : "text-muted-foreground")}>{program.summary}</p>
+      <div className="min-h-6 flex-1" aria-hidden />
+      {/* Footer pinned to the bottom so every card in a row shares the same baseline */}
+      <div className={cn("flex items-center justify-between gap-3 border-t pt-5", featured ? "border-on-band/20" : "border-border")}>
+        <span className={cn("min-w-0 truncate text-[0.7rem] font-bold uppercase leading-none tracking-[0.14em]", featured ? "text-on-band/75" : "text-muted-foreground")}>{program.level}</span>
+        <span
+          title={program.duration}
+          className={cn(
+            "inline-flex h-8 shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border px-3 text-xs font-semibold leading-none",
+            featured ? "border-on-band/30 text-on-band" : "border-border bg-background/60 text-foreground",
+          )}
+        >
+          <Clock className={cn("size-3.5 shrink-0", featured ? "text-gold" : "text-maroon")} aria-hidden />
+          {program.duration.replace(/^Usually\s+/i, "")}
+        </span>
       </div>
     </Link>
   );
