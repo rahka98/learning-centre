@@ -36,7 +36,7 @@ export function ProgramCard({ program, featured = false, className }: { program:
           <Clock className={cn("size-3.5 shrink-0", featured ? "text-gold" : "text-maroon")} aria-hidden />
           {program.duration.replace(/^Usually\s+/i, "")}
         </span>
-        <span className={cn("inline-flex h-8 shrink-0 items-center text-sm font-semibold leading-none", featured ? "text-gold" : "text-maroon")}>Details</span>
+        <span className={cn("inline-flex h-8 shrink-0 items-center text-sm font-semibold leading-none", featured ? "[color:var(--color-on-band)] underline decoration-gold underline-offset-4" : "text-maroon")}>Details</span>
       </div>
     </Link>
   );
