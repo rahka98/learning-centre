@@ -20,12 +20,12 @@ export function ProgramCard({ program, featured = false, className }: { program:
           <ArrowUpRight className="size-4" aria-hidden />
         </span>
       </div>
-      <h3 className={cn("text-h3 mt-8", featured && "[color:var(--color-on-band)]")}>{program.title}</h3>
+      <p className={cn("mt-8 text-[0.7rem] font-bold uppercase leading-none tracking-[0.16em]", featured ? "[color:color-mix(in_oklab,var(--color-on-band)_75%,transparent)]" : "text-muted-foreground")}>{program.level}</p>
+      <h3 className={cn("text-h3 mt-3", featured && "[color:var(--color-on-band)]")}>{program.title}</h3>
       <p className={cn("mt-3 text-[0.95rem] leading-relaxed", featured ? "[color:color-mix(in_oklab,var(--color-on-band)_80%,transparent)]" : "text-muted-foreground")}>{program.summary}</p>
       <div className="min-h-6 flex-1" aria-hidden />
       {/* Footer pinned to the bottom so every card in a row shares the same baseline */}
       <div className={cn("flex items-center justify-between gap-3 border-t pt-5", featured ? "border-on-band/20" : "border-border")}>
-        <span className={cn("min-w-0 truncate text-[0.7rem] font-bold uppercase leading-none tracking-[0.14em]", featured ? "[color:color-mix(in_oklab,var(--color-on-band)_75%,transparent)]" : "text-muted-foreground")}>{program.level}</span>
         <span
           title={program.duration}
           className={cn(
@@ -36,6 +36,7 @@ export function ProgramCard({ program, featured = false, className }: { program:
           <Clock className={cn("size-3.5 shrink-0", featured ? "text-gold" : "text-maroon")} aria-hidden />
           {program.duration.replace(/^Usually\s+/i, "")}
         </span>
+        <span className={cn("inline-flex h-8 shrink-0 items-center text-sm font-semibold leading-none", featured ? "text-gold" : "text-maroon")}>Details</span>
       </div>
     </Link>
   );
