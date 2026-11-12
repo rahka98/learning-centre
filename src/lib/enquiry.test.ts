@@ -27,7 +27,7 @@ describe("enquiry rules", () => {
     const parsed = enquirySchema.parse(valid);
     const url = whatsappUrl(business.whatsapp, buildEnquiryMessage(parsed, "MBA"));
     expect(url.startsWith("https://wa.me/918098891689?text=")).toBe(true);
-    expect(decodeURIComponent(url.split("text=")[1])).toContain("Mobile: +91 9876543210");
+    expect(decodeURIComponent(url.split("text=")[1] ?? "")).toContain("Mobile: +91 9876543210");
   });
 
   it("blocks a second enquiry within 30 seconds", () => {

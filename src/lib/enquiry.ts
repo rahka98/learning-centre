@@ -14,7 +14,7 @@ export function cleanText(value: string, max: number): string {
 export function normalizeIndianMobile(raw: string): string | null {
   const digits = raw.replace(/[\s\-()]/g, "");
   const match = digits.match(/^(?:\+?91|0)?([6-9]\d{9})$/);
-  return match ? match[1] : null;
+  return match?.[1] ?? null;
 }
 
 export const enquirySchema = z.object({

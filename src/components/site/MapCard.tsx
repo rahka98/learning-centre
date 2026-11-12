@@ -10,7 +10,7 @@ export function MapCard() {
   useEffect(() => {
     const el = ref.current;
     if (!el || !("IntersectionObserver" in window)) return setLoad(true);
-    const io = new IntersectionObserver(([e]) => e.isIntersecting && (setLoad(true), io.disconnect()), { rootMargin: "300px" });
+    const io = new IntersectionObserver(([e]) => e?.isIntersecting && (setLoad(true), io.disconnect()), { rootMargin: "300px" });
     io.observe(el);
     return () => io.disconnect();
   }, []);
