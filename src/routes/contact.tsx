@@ -10,8 +10,8 @@ import { InstagramIcon, WhatsAppIcon } from "@/components/site/icons";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: seo({
-      title: "Contact & Directions — Alagappa University Study Centre, Melur",
-      description: "Call 080988 91689 or visit Karthik Complex, Alagar Kovil Road, near Indian Bank, Melur, Tamil Nadu 625106. Get directions on Google Maps.",
+      title: "Contact & Directions - Alagappa University Study Centre, Melur Rau",
+      description: "Call +9180988 91689 or visit Karthik Complex, Alagar Kovil Road, near Indian Bank, Melur, Tamil Nadu 625106. Get directions on Google Maps.",
     }),
   }),
   component: ContactPage,
