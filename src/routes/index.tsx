@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
     meta: seo({
       title: "Alagappa University Study Centre, Melur — Distance Education Admissions",
       description:
-        "Rated 4.9 by 221 learners on Google. Admission guidance in Melur for Alagappa University distance education: UG, PG, B.Ed, MBA, MCA, M.Sc and MSW.",
+        "Rated 4.9 by 221 learners on Google. Admission guidance in Melur for Alagappa University distance education: UG, PG, B.Ed, MBA, MCA, M.Sc, B.Sc and MSW.",
     }),
   }),
   component: Index,
