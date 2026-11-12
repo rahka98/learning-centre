@@ -20,7 +20,7 @@ export function ProgramCard({ program, featured = false, className }: { program:
           <ArrowUpRight className="size-4" aria-hidden />
         </span>
       </div>
-      <h3 className={cn("text-h3 mt-8", featured && "text-on-band")}>{program.title}</h3>
+      <h3 className={cn("text-h3 mt-8", featured && "[color:var(--color-on-band)]")}>{program.title}</h3>
       <p className={cn("mt-3 flex-1 text-[0.95rem] leading-relaxed", featured ? "text-on-band/80" : "text-muted-foreground")}>{program.summary}</p>
       <div className={cn("mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em]", featured ? "text-on-band/75" : "text-muted-foreground")}>
         <span>{program.level}</span>

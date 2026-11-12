@@ -44,6 +44,29 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+// Baseline security headers for every response (frame embedding stays allowed so the editor preview works).
+const SECURITY_HEADERS: Record<string, string> = {
+  "X-Content-Type-Options": "nosniff",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+  "Cross-Origin-Opener-Policy": "same-origin-allow-popups",
+};
+
+function withSecurityHeaders(response: Response): Response {
+  try {
+    for (const [k, v] of Object.entries(SECURITY_HEADERS)) {
+      if (!response.headers.has(k)) response.headers.set(k, v);
+    }
+    return response;
+  } catch {
+    // Immutable headers: rebuild the response with the same body stream.
+    const headers = new Headers(response.headers);
+    for (const [k, v] of Object.entries(SECURITY_HEADERS)) if (!headers.has(k)) headers.set(k, v);
+    return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+  }
+}
+
 // Hosting compresses every response at the edge. Never compress a body (gzip, brotli,
 // CompressionStream) or set content-encoding here or in a server route: the body gets encoded
 // twice and renders garbled.
@@ -52,7 +75,7 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      return withSecurityHeaders(await normalizeCatastrophicSsrResponse(response));
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {
