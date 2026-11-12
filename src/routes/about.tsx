@@ -14,7 +14,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: seo({
       title: "About the Centre — Alagappa University Study Centre, Melur",
-      description: "A learner support centre in Melur, Madurai District, helping students join and complete Alagappa University distance education programmes.",
+      description: "A learner growth centre in Melur, Madurai District, helping students join and complete Alagappa University distance education programmes.",
     }),
   }),
   component: AboutPage,
