@@ -1,0 +1,83 @@
+IMAGE REQUIREMENT GUIDE — Alagappa University Study Centre, Melur
+=====================================================================
+
+The website currently uses 4 REPRESENTATIVE images (not photos of the centre).
+They are labelled as representative on the site. Replace them with real photos
+of the Melur centre as soon as possible — real photos build far more trust.
+
+All images live in:  src/assets/images/<folder>/
+After adding a photo, point to it in ONE place:  src/config/images.ts
+(Gallery entries are listed in src/data/gallery.ts.)
+
+Any size or orientation works — every frame crops/fits automatically and keeps
+faces in view using the "focus" setting in src/config/images.ts
+(e.g. focus: "50% 30%" keeps the upper part of the photo visible).
+
+Formats accepted: JPG, JPEG, PNG, WebP, AVIF, SVG (logo), GIF (animations).
+Tip: phone photos are fine. Shoot in daylight, landscape, uncluttered.
+
+---------------------------------------------------------------------
+A. ESSENTIAL (5 images)
+---------------------------------------------------------------------
+1. logo.svg  (or logo.png, transparent background)
+   Folder:   src/assets/images/brand/
+   Contains: The centre's official logo / emblem, if one exists.
+   Size:     SVG preferred; PNG at least 512 x 512 px.
+   Used in:  Header, footer, browser tab icon.
+   Note:     Today a custom seal mark is shown. Only use the Alagappa University
+             emblem if the university permits the centre to use it.
+
+2. hero-main.jpg
+   Folder:   src/assets/images/hero/
+   Contains: Learners or staff inside the Melur centre (with consent), or the
+             centre's welcoming reception area.
+   Size:     1600 x 2000 px or larger.   Ratio: 4:5 portrait (any works).
+   Used in:  Home page — arch-shaped photo in the top section.
+
+3. centre-front.jpg
+   Folder:   src/assets/images/about/
+   Contains: Front of Karthik Complex with the centre's signboard visible.
+   Size:     1600 x 1200 px.   Ratio: 4:3.
+   Used in:  About page main photo + helps visitors recognise the building.
+
+4. about-guidance.jpg
+   Folder:   src/assets/images/about/
+   Contains: A staff member guiding a learner at the desk (with consent).
+   Size:     1500 x 1200 px.   Ratio: 5:4.
+   Used in:  Home page — "Why learners choose Melur" section.
+
+5. gallery-01.jpg
+   Folder:   src/assets/images/gallery/
+   Contains: Inside the centre — study/help desk area.
+   Size:     1200 x 900 px.   Ratio: 4:3.
+   Used in:  About page gallery.
+
+---------------------------------------------------------------------
+B. RECOMMENDED (3 images)
+---------------------------------------------------------------------
+6. gallery-02.jpg — Learners collecting study materials.     1200 x 900, 4:3
+7. gallery-03.jpg — A past learner's graduation / certificate moment
+                    (with permission).                       1200 x 1500, 4:5
+8. gallery-04.jpg — Admission counselling session.          1200 x 900, 4:3
+   Folder: src/assets/images/gallery/    Used in: About page gallery.
+
+---------------------------------------------------------------------
+C. OPTIONAL (2 images)
+---------------------------------------------------------------------
+9.  og-share.jpg — Image shown when the site is shared on WhatsApp/Facebook.
+    Folder: public/   Size: 1200 x 630 px (1.91:1). Add only once the site
+    is published so it can be referenced with the full web address.
+10. hero-animation.gif — Short looping animation (e.g. graduation cap toss).
+    Folder: src/assets/images/animations/   Keep under 2 MB.
+    The site works fully without it (it currently uses a CSS 3D animation).
+
+---------------------------------------------------------------------
+D. FUTURE EXPANSION
+---------------------------------------------------------------------
+- gallery-05.jpg, gallery-06.jpg … — any number of extra gallery photos.
+  Add the file, then add one line in src/data/gallery.ts (choose a category:
+  Learning, Guidance or Milestones). The gallery grid adapts automatically.
+- programme-<code>.jpg (e.g. programme-mba.jpg) — optional banner per programme
+  for the programme detail pages. 1600 x 900, 16:9.
+
+TOTAL SUGGESTED: 5 essential + 3 recommended = 8 photos.
