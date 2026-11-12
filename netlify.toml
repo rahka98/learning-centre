@@ -1,0 +1,5 @@
+# On Netlify, Nitro auto-selects its "netlify" preset: static assets are written
+# to `dist/` and the SSR server function to `.netlify/functions-internal/`.
+[build]
+  command = "bun run build"
+  publish = "dist"
