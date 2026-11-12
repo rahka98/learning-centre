@@ -28,3 +28,11 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Business facts live only in `src/config/business.ts`; components read from it — so contact details change in one place.
+- Images are registered in `src/config/images.ts` and rendered via `SmartImage` (WebP srcset + fallback, focus point) — so any photo size adapts without layout edits.
+- Programmes, reviews, FAQs and gallery are data arrays in `src/data/` — pages map over them so content grows without new code.
+- Theme = `.dark` class set before paint by `themeInitScript` in `__root.tsx` head, persisted in localStorage — avoids flash and respects system preference.
+- Enquiries are validated client-side (`src/lib/enquiry.ts`, tested) and handed to WhatsApp; no personal data is stored — there is no backend yet.
+- Security headers are added in `src/server.ts`; never add X-Frame-Options/frame-ancestors (breaks the editor preview).

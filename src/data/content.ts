@@ -1,5 +1,5 @@
 /** Verified review excerpts from the centre's public Google listing. */
-export const reviews = [
+export const reviews: { quote: string; source: string }[] = [
   {
     quote:
       "Staff is very much students friendly and easily accessible to all clear doubts. Very good learning center. Good Guidance. Best communication for any doubts.",

@@ -34,6 +34,7 @@ const pillars = [
 
 function Index() {
   const google = business.ratings[0];
+  const [r0, r1, r2] = reviews as [(typeof reviews)[number], (typeof reviews)[number], (typeof reviews)[number]];
   return (
     <>
       {/* HERO */}
@@ -104,8 +105,8 @@ function Index() {
           <Reveal className="relative">
             <SmartImage image={images.guidance} ratio="5 / 4" sizes="(min-width: 1024px) 45vw, 100vw" className="rounded-[2rem] shadow-elegant" />
             <figure className="glass absolute -bottom-8 right-4 max-w-[19rem] rounded-2xl p-5 shadow-elegant sm:right-8">
-              <blockquote className="font-display text-lg leading-snug text-foreground">“{reviews[1].quote}”</blockquote>
-              <figcaption className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">{reviews[1].source}</figcaption>
+              <blockquote className="font-display text-lg leading-snug text-foreground">“{r1.quote}”</blockquote>
+              <figcaption className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">{r1.source}</figcaption>
             </figure>
           </Reveal>
           <div className="pt-6 lg:pt-0">
@@ -188,7 +189,7 @@ function Index() {
             </Button>
           </Reveal>
           <div className="grid gap-5">
-            {[reviews[0], reviews[2]].map((r, i) => (
+            {[r0, r2].map((r, i) => (
               <Reveal key={i} delay={i * 120} className={i === 1 ? "lg:ml-16" : "lg:mr-16"}>
                 <figure className="rounded-3xl border border-border bg-card p-7 shadow-soft sm:p-8">
                   <blockquote className="font-display text-xl leading-snug text-foreground sm:text-2xl">“{r.quote}”</blockquote>
