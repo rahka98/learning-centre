@@ -17,7 +17,7 @@ learner support centre at Karthik Complex, Alagar Kovil Road, Melur, Tamil Nadu 
 
 ## Tech stack
 TanStack Start (React 19, server-side rendering), Vite, Tailwind CSS v4, TypeScript,
-Zod validation, Vitest tests. No database — nothing personal is stored.
+Zod validation, Vitest tests. Lovable Cloud (backend) is connected but not used yet — nothing personal is stored.
 
 ## Folder structure
 ```
